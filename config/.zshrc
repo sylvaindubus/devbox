@@ -17,7 +17,8 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export NVM_DIR="$HOME/.nvm"
-	. "/usr/local/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 if [ -f ~/devbox/config/custom/.zshrc ]; then
 	source ~/devbox/config/custom/.zshrc
@@ -26,21 +27,25 @@ fi
 source ~/.oh-my-zsh/oh-my-zsh.sh
 
 # Git aliases
-alias gpull="git pull"
-alias gpullr="git pull --rebase"
-alias gpush="git push"
-alias gadd="git add"
-alias gcommit="git commit"
-alias gcommitm="git commit -m"
-alias gbranch="git branch"
+alias gpl="git pull"
+alias gplr="git pull --rebase"
+alias gps="git push -u"
+alias ga="git add"
+alias gcm="git commit"
+alias gcmm="git commit -m"
+alias gcma="git commit --amend"
+alias gbr="git branch"
 alias gco="git checkout"
-alias gblame="git blame"
-alias gshow="git show"
+alias gbl="git blame"
+alias gsh="git show"
 alias gst="git status"
 alias glg="git log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative"
-alias gdiff="git diff"
-alias grebase="git rebase"
-alias gmerge="git merge"
+alias gd="git diff"
+alias grb="git rebase"
+alias gm="git merge"
+alias gb="git branch"
+alias gr="git rebase"
+alias gri="git rebase -i"
 
 # Move to trash instead of remove command
 rmt () {
